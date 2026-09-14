@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Del código al caos: 5 lecciones sobre videojuegos</title>
+    <link rel="stylesheet" href="css\styles.css">
+</head>
+<body>
+
+    <!-- Encabezado Principal -->
+    <header class="header-principal">
+        <div class="contenedor">
+            <h1 class="titulo-sitio">Del código al caos</h1>
+            <p class="subtitulo-sitio">5 lecciones contraintuitivas sobre crear videojuegos y sobrevivir para contarlo</p>
+        </div>
+    </header>
+
+    <!-- Navegación Principal Accesible -->
+    <nav class="navegacion-principal" aria-label="Menú principal">
+        <div class="contenedor">
+            <ul>
+                <li><a href="#introduccion">Inicio</a></li>
+                <li><a href="#bug-decimales">1. Bug Decimales</a></li>
+                <li><a href="#museo-matematico">2. Museo Matemático</a></li>
+                <li><a href="#hack-ram">3. Hack a la RAM</a></li>
+                <li><a href="#glitch-social">4. Glitch Social</a></li>
+                <li><a href="#salto-vacio">5. Salto al Vacío</a></li>
+                <li><a href="#conclusion">Conclusión</a></li>
+                <li><a href="#multimedia">Multimedia</a></li>
+                <li><a href="#bibliografia">Bibliografía</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Contenido Principal -->
+    <main class="contenedor clearfix">
+
+        <!-- Sección Introducción -->
+        <section id="introduccion" class="seccion-contenido">
+            <h2>Crear videojuegos en un océano de lanzamientos</h2>
+            <article>
+                <p>Casi cualquier persona que haya crecido con un mando en las manos ha fantaseado con crear su propio videojuego. Sin embargo, la realidad de la industria actual es una cura de humildad estadística. Como dice el desarrollador y divulgador Guinxu, publicar hoy en Steam es como "lanzar una gota de agua en medio del océano". Con unos 20 lanzamientos diarios compitiendo por un segundo de atención, la visibilidad es un jefe final mucho más temible que cualquier error de código.</p>
+                <p>Esta es la historia de cómo un programador que empezó su carrera automatizando facturas mediante "bots" logró navegar ese océano hasta liderar una comunidad de más de 700,000 seguidores. Su viaje nos regala lecciones valiosas sobre técnica, psicología y la economía del creador.</p>
+            </article>
+        </section>
+
+        <!-- Sección 1 -->
+        <section id="bug-decimales" class="seccion-contenido">
+            <h2>1. El bug "racista" y la tiranía de los decimales</h2>
+            <article>
+                <p>Uno de los errores más memorables en el desarrollo de <em>Flat World</em> —el proyecto comercial de Guinxu— no nació de una lógica compleja, sino de la configuración regional de los sistemas operativos. Tras lanzar una demo, los jugadores empezaron a reportar algo insólito: en ciertos países, el personaje aparecía flotando en el vacío absoluto.</p>
+                <p>El problema residía en los archivos CSV que posicionaban los objetos. En España usamos la coma para los decimales, pero el estándar anglosajón usa el punto. Para un sistema configurado en español, una coordenada de "5.001" era interpretada correctamente como cinco unidades y un poco más; para un sistema en inglés, ese mismo archivo podía leerse como "cinco mil uno", teletransportando al personaje fuera del mapa.</p>
+                <p>Sin embargo, el verdadero "jefe final" de la localización fue Francia. Incluso tras estandarizar puntos y comas, el juego seguía rompiéndose allí. ¿El motivo? El sistema francés utiliza espacios para separar los miles, un detalle de <em>Culture Awareness</em> que Guinxu tuvo que aprender a golpes de código. La lección técnica es clara: nunca asumas que el ordenador del usuario habla el mismo idioma matemático que el tuyo; fuerza siempre un estándar para blindar la lógica de tu mundo.</p>
+            </article>
+        </section>
+
+        <!-- Sección 2 -->
+        <section id="museo-matematico" class="seccion-contenido">
+            <h2>2. La paradoja de la educación: Del aula al "Museo Matemático"</h2>
+            <article>
+                <p>Guinxu comenzó su trayectoria en Ingeniería Industrial antes de saltar a Informática, un cambio motivado por la densa carga teórica de la primera. A pesar de su experiencia previa programando desde los 11 años, la universidad le resultó un terreno de contrastes: asignaturas obsoletas frente a herramientas potentes que nadie sabía venderle bien.</p>
+                <p>La desconexión es el gran "glitch" del sistema educativo:</p>
+                <ul class="lista-destacada">
+                    <li><strong>Teoría en el aula:</strong> Resolver matrices y determinantes en papel, sintiéndolo como una extensión tediosa del bachillerato.</li>
+                    <li><strong>Aplicación en el motor (Unity/OpenGL):</strong> Uso de matrices para calcular rotaciones, traslaciones y escalas; la base crítica para programar shaders y entender la computación gráfica 3D.</li>
+                </ul>
+                <p>Para cerrar esta brecha, Guinxu tomó una decisión puramente creativa: construyó un <strong>Museo de las Matemáticas</strong> dentro de su propio juego. En él, explica visualmente conceptos como los vectores o las matrices, transformando lo que en clase parecía "relleno" en una mecánica de juego tangible.</p>
+            </article>
+        </section>
+
+        <!-- Sección 3 -->
+        <section id="hack-ram" class="seccion-contenido">
+            <h2>3. El arte de la ilusión: Hackeando la cámara y la RAM</h2>
+            <article>
+                <p>El desarrollo de videojuegos es, en esencia, un cine interactivo lleno de "apaños" visuales. Al investigar juegos comerciales como <em>Kingdom Hearts</em>, Guinxu descubrió la técnica de la perspectiva forzada. Para ahorrar recursos, los desarrolladores a veces diseñan puentes que se estrechan físicamente en su extremo lejano. Al ojo del jugador, parece distancia; en la realidad del motor, el puente simplemente se vuelve minúsculo.</p>
+                <p>Para descubrir estos secretos, Guinxu utiliza una técnica de "hacking" que aporta una perspectiva única sobre el software: el escaneado de la memoria RAM.</p>
+                <div class="caja-resumen">
+                    <p><strong>Proceso de filtrado de RAM:</strong> Si un jugador tiene 32 monedas, se filtran todas las variables en la RAM que valgan 32. Tras conseguir una moneda más, se busca cuál de esas variables ha pasado a valer 33. Una vez identificada la dirección de memoria, se puede manipular cualquier valor, desde el dinero hasta las coordenadas de la cámara.</p>
+                </div>
+                <p>Esta mentalidad de "desmontar el juguete" le permite entender que, en un juego, si algo no está frente a la cámara, simplemente no necesita existir.</p>
+            </article>
+        </section>
+
+        <!-- Sección 4 -->
+        <section id="glitch-social" class="seccion-contenido">
+            <h2>4. El "Glitch" social: La estrategia del examen desordenado</h2>
+            <article>
+                <p>El ingenio de un desarrollador no se limita al compilador. Guinxu relata una anécdota universitaria que ilustra la importancia de entender el "factor humano" y la fatiga del evaluador. Al responder exámenes en folios aparte, descubrió que podía duplicar una respuesta, redactándola de forma distinta, en diferentes secciones de un examen caótico.</p>
+                <p>Para que el truco funcionara, aplicaba una pequeña dosis de ingeniería social: preguntaba preventivamente al profesor: <em>"¿Puedo responder en desorden? Me siento más cómodo empezando por las que mejor me sé"</em>. Con el permiso concedido, el desorden justificaba que una respuesta apareciera dos veces. Ante la fatiga de corregir 30 exámenes idénticos a las diez de la noche, los profesores a menudo sumaban puntos por ambas versiones. Aunque no es un consejo académico, es una lección sobre cómo la presentación y el contexto pueden alterar el resultado de un sistema bajo presión.</p>
+            </article>
+        </section>
+
+        <!-- Sección 5 -->
+        <section id="salto-vacio" class="seccion-contenido">
+            <h2>5. El salto al vacío: De los "clics humanos" a la libertad creativa</h2>
+            <article>
+                <p>Antes de ser indie a tiempo completo, Guinxu trabajaba en consultoría RPA (Automatización Robótica de Procesos). Su día a día consistía en crear bots que simularan clics y pulsaciones de teclas para interactuar con softwares antiguos que no tenían una API amigable. Era el trabajo de crear "falsos humanos" para tareas tediosas.</p>
+                <p>La transición al desarrollo independiente no fue un impulso ciego, sino un movimiento calculado. Cuando YouTube empezó a generarle ingresos equivalentes a un sueldo mínimo, decidió dejar la seguridad del contrato indefinido. ¿Su red de seguridad? Un título universitario que funcionaba como "Plan B" y la convicción de que el riesgo es necesario para validar una vocación.</p>
+                
+                <blockquote class="cita-destacada">
+                    "Es mejor arrepentirte de haberlo intentado y que haya salido mal, que arrepentirte de no haberlo intentado."
+                    <cite>— Guinxu</cite>
+                </blockquote>
+            </article>
+        </section>
+
+        <!-- Conclusión -->
+        <section id="conclusion" class="seccion-contenido">
+            <h2>Conclusión: El riesgo como cálculo, no como locura</h2>
+            <article>
+                <p>El desarrollo de videojuegos es uno de los proyectos más complejos que un programador puede enfrentar. Exige dominar desde el álgebra lineal hasta la psicología del usuario y la gestión de comunidades. La historia de Guinxu nos enseña que el éxito en la "economía del creador" no depende solo de la pasión, sino de la capacidad de transformar el conocimiento técnico en contenido que resuene con los demás.</p>
+                <p>Lanzar una gota de agua al océano de Steam da miedo, pero tener un "Plan B" (una formación sólida) es lo que te da la libertad de intentar que el "Plan A" (tu sueño) funcione. Y tú, ¿qué proyecto tienes pausado por miedo a que tu gota se pierda en el mar?</p>
+            </article>
+        </section>
+
+        <!-- Sección Multimedia -->
+        <section id="multimedia" class="seccion-contenido">
+            <h2>Contenido Multimedia</h2>
+
+            <!-- Podcast Incrustado -->
+            <article class="bloque-multimedia">
+                <h3>Episodio del Podcast / Entrevista</h3>
+                <div class="contenedor-video">
+                    <iframe 
+                          src="https://www.youtube.com/embed/edC6ntYEY1Q" 
+                         title="Episodio del podcast" 
+                           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                           referrerpolicy="strict-origin-when-cross-origin"
+                         allowfullscreen>
+                    </iframe>
+                </div>
+            </article>
+
+            <!-- Galería de Imágenes Adaptable (inline-block) -->
+            <article class="galeria-seccion">
+                <h3>Galería Conceptual Ilustrativa</h3>
+                <div class="galeria-contenedor clearfix">
+
+                    <figure class="tarjeta-galeria">
+                        <img src="img\NotebookLM Mind Map.png" alt="Mapa mental conceptual sobre el desarrollo de videojuegos">
+                        <figcaption>Mapa mental con la estructura temática del desarrollo de videojuegos.</figcaption>
+                    </figure>
+
+                    <figure class="tarjeta-galeria">
+                        <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=800&q=80" alt="Pantalla con código de desarrollo de videojuegos">
+                        <figcaption>Lógica de programación y corrección de bugs en motores 3D.</figcaption>
+                    </figure>
+
+                    <figure class="tarjeta-galeria">
+                        <img src="https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?auto=format&fit=crop&w=800&q=80" alt="Mando de videojuegos retro sobre superficie oscura">
+                        <figcaption>Diseño e interacción en la industria del videojuego indie.</figcaption>
+                    </figure>
+
+                </div>
+            </article>
+        </section>
+
+        <!-- Sección de Bibliografía -->
+        <section id="bibliografia" class="seccion-contenido bibliografia">
+            <h2>Bibliografía y Fuentes</h2>
+            <article>
+                <p>Recurso audiovisual de referencia de la entrevista:</p>
+                <ul>
+                    <li>
+                        <strong>Podcast / Entrevista sobre Creación de Videojuegos:</strong> 
+                        <a href="https://youtu.be/edC6ntYEY1Q?si=c6gZX52V17uj-_mt" target="_blank" rel="noopener noreferrer">
+                            https://youtu.be/edC6ntYEY1Q?si=c6gZX52V17uj-_mt
+                        </a>
+                    </li>
+                </ul>
+            </article>
+        </section>
+
+    </main>
+
+    <!-- Pie de Página -->
+    <footer class="footer-principal">
+        <div class="contenedor">
+            <p>&copy; 2026 Del Código al Caos — Análisis sobre Desarrollo de Videojuegos e Industria Indie.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

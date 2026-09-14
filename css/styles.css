@@ -1,0 +1,268 @@
+/* ==========================================================================
+   HOJA DE ESTILOS CSS - PALETA CÁLIDA CADA Y DISEÑO FLUIDO
+   SIN FLEXBOX, SIN GRID Y SIN MEDIA QUERIES
+   ========================================================================== */
+
+/* --- Reset Básico y Box-Sizing --- */
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* --- Paleta de Colores Cálidos Accesible y Tipografía --- */
+/*
+   Colores Cálidos Seleccionados:
+   - Fondo general: #1c130e (Café espresso muy oscuro)
+   - Fondo de tarjeta/contenedor: #2a1c14 (Café moca cálido)
+   - Texto principal: #fbf5ee (Crema/Arena suave con alto contraste)
+   - Texto secundario: #d2b48c (Tan / Marrón claro)
+   - Acentos primarios: #e65100 (Naranja quemado vibrante)
+   - Acentos secundarios: #ff8a65 (Terracota cálido)
+   - Bordes: #3d291d
+*/
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    background-color: #1c130e;
+    color: #fbf5ee;
+    line-height: 1.7;
+    font-size: 100%; /* Escala fluida según preferencia del sistema */
+    text-align: left;
+}
+
+/* --- Estructura Contenedora Fluida --- */
+.contenedor {
+    width: 90%;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Clearfix para resolver float de elementos */
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* --- Encabezado Principal --- */
+.header-principal {
+    background-color: #2a1c14;
+    border-bottom: 4px solid #e65100;
+    padding: 3.5% 0;
+    text-align: center;
+}
+
+.titulo-sitio {
+    font-size: 2.3em;
+    color: #ff8a65;
+    margin-bottom: 0.3em;
+    letter-spacing: 0.5px;
+}
+
+.subtitulo-sitio {
+    font-size: 1.1em;
+    color: #d2b48c;
+    max-width: 850px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* --- Navegación Flotante y Fluida --- */
+.navegacion-principal {
+    background-color: #150d09;
+    border-bottom: 1px solid #3d291d;
+    text-align: center;
+    padding: 0.6% 0;
+}
+
+.navegacion-principal ul {
+    list-style: none;
+    display: block;
+}
+
+.navegacion-principal li {
+    display: inline-block;
+    margin: 0.3em 0.3em;
+}
+
+.navegacion-principal a {
+    color: #fbf5ee;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9em;
+    padding: 0.4em 0.8em;
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #2a1c14;
+    border: 1px solid #3d291d;
+}
+
+.navegacion-principal a:hover,
+.navegacion-principal a:focus {
+    background-color: #e65100;
+    color: #ffffff;
+}
+
+/* --- Contenido Principal --- */
+main {
+    padding: 3% 0;
+}
+
+.seccion-contenido {
+    background-color: #2a1c14;
+    margin-bottom: 2em;
+    padding: 4%;
+    border-radius: 8px;
+    border: 1px solid #3d291d;
+}
+
+/* Jerarquía Tipográfica */
+h2 {
+    font-size: 1.6em;
+    color: #ff8a65;
+    border-bottom: 2px solid #3d291d;
+    padding-bottom: 0.4em;
+    margin-bottom: 0.8em;
+}
+
+h3 {
+    font-size: 1.3em;
+    color: #fbf5ee;
+    margin-top: 1em;
+    margin-bottom: 0.6em;
+}
+
+p {
+    margin-bottom: 1.2em;
+    font-size: 1em;
+    color: #f1e6d8;
+}
+
+em {
+    color: #ffab91;
+}
+
+/* Elementos Destacados */
+.cita-destacada {
+    background-color: #1c130e;
+    border-left: 5px solid #e65100;
+    margin: 1.5em 0;
+    padding: 1.2em;
+    font-style: italic;
+    color: #e0d0c0;
+}
+
+.cita-destacada cite {
+    display: block;
+    margin-top: 0.5em;
+    font-style: normal;
+    font-weight: bold;
+    color: #ff8a65;
+}
+
+.lista-destacada {
+    margin-left: 5%;
+    margin-bottom: 1.5em;
+}
+
+.lista-destacada li {
+    margin-bottom: 0.8em;
+    color: #f1e6d8;
+}
+
+.caja-resumen {
+    background-color: #1c130e;
+    padding: 3%;
+    border-radius: 6px;
+    border: 1px dashed #e65100;
+    margin: 1.5em 0;
+}
+
+/* --- Multimedia Proporcional Fluida --- */
+.bloque-multimedia {
+    margin-bottom: 2em;
+}
+
+.contenedor-video {
+    position: relative;
+    padding-bottom: 56.25%; /* Relación de aspecto 16:9 fluida */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    background-color: #000;
+    border-radius: 6px;
+}
+
+.contenedor-video iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* --- Galería de Imágenes Adaptable (`display: inline-block`) --- */
+.galeria-seccion {
+    margin-top: 2em;
+}
+
+.galeria-contenedor {
+    width: 100%;
+    text-align: center; /* Centra las tarjetas alineadas en linea */
+    margin-left: -1%;
+    margin-right: -1%;
+}
+
+.tarjeta-galeria {
+    display: inline-block;
+    vertical-align: top;
+    width: 31%; /* 3 columnas en escritorio */
+    min-width: 250px; /* Al bajar de 250px en móvil rompe la fila automáticamente */
+    margin: 1%;
+    background-color: #1c130e;
+    border: 1px solid #3d291d;
+    border-radius: 6px;
+    padding: 1%;
+    text-align: left;
+}
+
+.tarjeta-galeria img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 4px;
+}
+
+.tarjeta-galeria figcaption {
+    font-size: 0.85em;
+    color: #d2b48c;
+    padding: 0.8em 0.3em 0.3em 0.3em;
+    text-align: center;
+}
+
+/* --- Bibliografía --- */
+.bibliografia a {
+    color: #ff8a65;
+    word-break: break-all;
+}
+
+.bibliografia a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+/* --- Pie de Página --- */
+.footer-principal {
+    background-color: #2a1c14;
+    border-top: 1px solid #3d291d;
+    text-align: center;
+    padding: 2.5% 0;
+    color: #d2b48c;
+    font-size: 0.9em;
+}
